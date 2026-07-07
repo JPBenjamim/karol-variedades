@@ -1,6 +1,5 @@
-// Troque apenas este número pelo WhatsApp oficial da Karol, com DDI + DDD.
-// Exemplo: "5584999999999"
-var KAROL_WHATSAPP = "5584999999999";
+var KAROL_WHATSAPP = "558491827825";
+var KAROL_SITE_URL = "https://jpbenjamim.github.io/karol-variedades";
 
 var karolProducts = [
   { name: "Copo liquidificador portátil", category: "Utilidades", image: "produto-01.jpeg" },
@@ -69,17 +68,23 @@ function renderKarolProducts(limit) {
   var products = getKarolFilteredProducts(limit);
   grid.innerHTML = products.map(function (product) {
     var message = encodeURIComponent("Olá, Karol! Tenho interesse neste produto: " + product.name);
+    var productSlug = product.image.replace(".jpeg", ".html");
+    var productUrl = KAROL_SITE_URL + "/produtos/" + productSlug;
+    var shareMessage = encodeURIComponent("Olha esse produto da Karol Variedades: " + product.name + " " + productUrl);
     return [
       '<div class="col-sm-6 col-md-4 col-lg-3 mb-4">',
         '<article class="product-card-karol">',
           '<div class="product-img-karol">',
-            '<img src="images/karol-produtos/' + product.image + '" alt="' + product.name + '" loading="lazy">',
+            '<img src="images/karol-produtos-tratadas/' + product.image + '" alt="' + product.name + '" loading="lazy">',
           '</div>',
           '<div class="product-body-karol">',
             '<span class="tag">' + product.category + '</span>',
             '<h3>' + product.name + '</h3>',
             '<p class="price-note">Consulte preço e disponibilidade</p>',
-            '<a class="btn-karol" href="https://wa.me/' + KAROL_WHATSAPP + '?text=' + message + '" target="_blank" rel="noopener">Pedir pelo WhatsApp</a>',
+            '<div class="product-actions">',
+              '<a class="btn-karol" href="https://wa.me/' + KAROL_WHATSAPP + '?text=' + message + '" target="_blank" rel="noopener">Pedir</a>',
+              '<a class="btn-share-karol" href="https://wa.me/?text=' + shareMessage + '" target="_blank" rel="noopener" aria-label="Compartilhar ' + product.name + ' no WhatsApp"><i class="fa fa-whatsapp"></i> Compartilhar</a>',
+            '</div>',
           '</div>',
         '</article>',
       '</div>'

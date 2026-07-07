@@ -36,7 +36,8 @@ body {
 .karol-hero {
   background:
     linear-gradient(90deg, rgba(255,255,255,.96) 0%, rgba(255,255,255,.9) 42%, rgba(255,255,255,.18) 68%, rgba(255,255,255,0) 100%),
-    url("../images/slider-bg.jpg") center right / cover no-repeat;
+    url("../images/slider-bg.jpg") right top / auto 100% no-repeat,
+    #f4f4f4;
   min-height: 640px;
   display: flex;
   align-items: center;
@@ -120,7 +121,8 @@ body {
   align-items: center;
   background:
     linear-gradient(90deg, rgba(255,245,246,0) 0%, rgba(255,245,246,.35) 34%, rgba(255,245,246,.98) 58%, #fff5f6 100%),
-    url("../images/arrival-bg.png") center left / cover no-repeat;
+    url("../images/arrival-bg.png") left top / auto 100% no-repeat,
+    #fff5f6;
 }
 
 .promo-banner h2 {
@@ -277,7 +279,7 @@ body {
 .product-card-karol {
   position: relative;
   height: 100%;
-  background: #f7f8f9;
+  background: #fff;
   border-radius: 12px;
   overflow: hidden;
   transition: .25s;
@@ -290,8 +292,7 @@ body {
 }
 
 .product-img-karol {
-  background: #ececec;
-  aspect-ratio: 4 / 5;
+  background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -300,8 +301,8 @@ body {
 
 .product-img-karol img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  display: block;
   transition: .35s;
 }
 
@@ -310,7 +311,7 @@ body {
 }
 
 .product-body-karol {
-  padding: 18px 18px 20px;
+  padding: 0 14px 16px;
 }
 
 .product-body-karol .tag {
@@ -465,5 +466,41 @@ body {
   .hero-actions a {
     width: 100%;
     text-align: center;
+  }
+
+  .product_section.layout_padding {
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+
+  .product_section .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .product_section .row {
+    margin-left: -6px;
+    margin-right: -6px;
+  }
+
+  .product_section .row > [class*="col-"] {
+    padding-left: 6px;
+    padding-right: 6px;
+    margin-bottom: 12px !important;
+  }
+
+  .product-body-karol {
+    padding: 0 8px 10px;
+  }
+
+  .btn-karol,
+  .btn-share-karol {
+    padding: 8px 7px;
+    font-size: 11px;
+    line-height: 1.2;
+  }
+
+  .product-actions {
+    gap: 6px;
   }
 }

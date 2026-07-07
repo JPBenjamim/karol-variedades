@@ -1,0 +1,5 @@
+.DS_Store
+Thumbs.db
+
+# Backups do template original mantidos localmente
+*-template-original.html

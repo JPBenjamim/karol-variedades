@@ -1,5 +1,6 @@
 var KAROL_WHATSAPP = "558491827825";
 var KAROL_SITE_URL = "https://jpbenjamim.github.io/karol-variedades";
+var KAROL_CATALOG_SHARE_TEXT = "Olha o catálogo da Karol Variedades: " + KAROL_SITE_URL + "/";
 
 var karolProducts = [
   { name: "Gelatina colorida", category: "Utilidades", image: "produto-01.jpeg" },
@@ -11,7 +12,6 @@ var karolProducts = [
   { name: "Celular estilo retrô", category: "Eletrônicos", image: "produto-07.jpeg" },
   { name: "Caixa de Som Kapbom", category: "Áudio", image: "produto-08.jpeg" },
   { name: "Fone Bluetooth BT 510", category: "Áudio", image: "produto-09.jpeg", price: "R$ 50,00" },
-  { name: "Fone Bluetooth BT 510", category: "Áudio", image: "produto-10.jpeg", price: "R$ 50,00" },
   { name: "Caixa de Som Kapbom KA-8296", category: "Áudio", image: "produto-11.jpeg" },
   { name: "Cabos USB coloridos", category: "Cabos e carregadores", image: "produto-12.jpeg" },
   { name: "Carregador turbo 3.4A", category: "Cabos e carregadores", image: "produto-13.jpeg" },
@@ -35,8 +35,7 @@ var karolProducts = [
   { name: "Mouse sem fio", category: "Informática", image: "produto-31.jpeg" },
   { name: "Caixa de som com luz LED", category: "Áudio", image: "produto-32.jpeg" },
   { name: "Pulseiras luminosas LED", category: "Acessórios", image: "produto-33.jpeg" },
-  { name: "Fone de ouvido Bluetooth", category: "Áudio", image: "produto-34.jpeg" },
-  { name: "Kit carregador e cabos", category: "Cabos e carregadores", image: "produto-35.jpeg" }
+  { name: "Fone de ouvido Bluetooth", category: "Áudio", image: "produto-34.jpeg" }
 ];
 
 var karolCurrentCategory = "Todos";
@@ -107,6 +106,13 @@ function setupKarolWhatsappButtons() {
   });
 }
 
+function setupKarolShareCatalogButtons() {
+  var buttons = document.querySelectorAll("[data-share-catalog]");
+  buttons.forEach(function (button) {
+    button.href = "https://wa.me/?text=" + encodeURIComponent(KAROL_CATALOG_SHARE_TEXT);
+  });
+}
+
 function setupKarolCatalogFilters() {
   var filterWrap = document.getElementById("karolFilters");
   if (!filterWrap) return;
@@ -142,4 +148,5 @@ function setupKarolSite() {
   setupKarolCatalogFilters();
   renderKarolProducts();
   setupKarolWhatsappButtons();
+  setupKarolShareCatalogButtons();
 }

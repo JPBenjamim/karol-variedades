@@ -231,6 +231,24 @@ body {
   margin-top: 12px;
 }
 
+.catalog-share-main {
+  display: inline-block;
+  margin-top: 18px;
+  border: 1px solid #25d366;
+  color: #159947;
+  background: #f1fff6;
+  border-radius: 999px;
+  padding: 11px 18px;
+  font-weight: 800;
+  transition: .2s;
+}
+
+.catalog-share-main:hover {
+  background: #25d366;
+  color: #fff;
+  text-decoration: none;
+}
+
 .catalog-empty {
   display: none;
   width: 100%;
